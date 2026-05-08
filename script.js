@@ -1,5 +1,3 @@
-let humanScore = 0;
-let computerSCore = 0;
 
 function getComputerChoice() {
   let randomNumber = Math.random();
@@ -21,6 +19,10 @@ function getHumanChoice() {
 let humanChoice = getHumanChoice();
 console.log(humanChoice);
 
+
+function playGame(){
+let humanScore = 0;
+let computerSCore = 0;
 function playRound(computerChoice, humanChoice) {
   if (humanChoice === computerChoice) {
     console.log(`Draw both picked ${humanChoice}`);
@@ -46,4 +48,13 @@ function playRound(computerChoice, humanChoice) {
 
 
 }
-playRound(computerChoice, humanChoice);
+for (let i = 1; i <= 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(computerSelection, humanSelection);
+  }
+  if(humanScore>computerSCore)console.log("Final winner you");
+  if(computerSCore>humanScore)console.log("Final winner computer");
+  if(computerSCore==humanScore)console.log("It is a tie")
+}
+playGame();
